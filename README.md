@@ -45,6 +45,7 @@ docker-compose up -d --build
 ```
 
 That's it, start using the api as you like
+
 # How to run tests:
 
 First migrate and populate the database aaxis_test running the previously shown command
@@ -52,3 +53,13 @@ First migrate and populate the database aaxis_test running the previously shown 
 ```
 docker-compose run --rm web php bin/phpunit
 ```
+
+# Available Endpoints
+
+In the repository you can find the file Aaxis.postman_collection.json which you can use with Postman
+
+- Token endpoint: [POST] http://localhost/token
+- Update Product: [POST] http://localhost/product/:id
+- Get Product: [GET] http://localhost/product/:id
+- User Products: [GET] http://localhost/product
+- All Products: [GET] http://localhost/product/all

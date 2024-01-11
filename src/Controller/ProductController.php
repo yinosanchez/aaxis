@@ -19,7 +19,7 @@ class ProductController extends AbstractController
     {
         $products = $entityManager->getRepository(Product::class)->findBy(['owner' => ['id' => $user->getId()]]);
 
-        return $this->json($products, Response::HTTP_OK, [], [AbstractNormalizer::ATTRIBUTES => ['id', 'sku', 'product_name', 'description', 'created_at', 'owner' => ['username']]]);
+        return $this->json($products, Response::HTTP_OK, [], [AbstractNormalizer::ATTRIBUTES => ['id', 'sku', 'productName', 'description', 'createdAt', 'updatedAt', 'owner' => ['username']]]);
     }
 
     #[Route('/product/all', name: 'all_product')]
@@ -27,7 +27,7 @@ class ProductController extends AbstractController
     {
         $products = $entityManager->getRepository(Product::class)->findAll();
 
-        return $this->json($products, Response::HTTP_OK, [], [AbstractNormalizer::ATTRIBUTES => ['id', 'sku', 'product_name', 'description', 'created_at', 'owner' => ['username']]]);
+        return $this->json($products, Response::HTTP_OK, [], [AbstractNormalizer::ATTRIBUTES => ['id', 'sku', 'productName', 'description', 'createdAt', 'updatedAt', 'owner' => ['username']]]);
     }
 
     #[Route('/product/{id}', name: 'update_product')]
