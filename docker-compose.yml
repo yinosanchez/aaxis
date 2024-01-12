@@ -11,21 +11,30 @@ services:
       POSTGRES_USER: aaxis
       POSTGRES_PASSWORD: aaxis
     volumes:
-      - ./data:/var/lib/mysql
+      - ./api/data:/var/lib/mysql
     ports:
       - "5432:5432"
 
   web:
-    build: ./.docker
+    build: ./api/.docker
     container_name: project_web
     volumes:
-      - ./:/var/www/html
-      - ./.docker/virtualhost.conf:/etc/apache2/sites-available/000-default.conf
-      - ./.docker/supervisord.conf:/etc/supervisor/conf.d/supervisord.conf
+      - ./api:/var/www/html
+      - ./api/.docker/virtualhost.conf:/etc/apache2/sites-available/000-default.conf
+      - ./api/.docker/supervisord.conf:/etc/supervisor/conf.d/supervisord.conf
     ports:
-      - "80:80"
+      - "81:80"
     depends_on:
       - db
+
+  app:
+    build:
+      context: ./app
+      dockerfile: Dockerfile
+    volumes:
+      - ./app:/app
+    ports:
+      - "80:3000"
 
   adminer:
     image: adminer
