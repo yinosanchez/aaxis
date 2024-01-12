@@ -58,8 +58,8 @@ docker-compose run --rm web php bin/phpunit
 
 In the repository you can find the file Aaxis.postman_collection.json which you can use with Postman
 
-- Token endpoint: [POST] http://localhost/token
-- Update Product: [POST] http://localhost/product/:id
-- Get Product: [GET] http://localhost/product/:id
-- User Products: [GET] http://localhost/product
-- All Products: [GET] http://localhost/product/all
+- Token endpoint: [POST] http://localhost:81/token
+- Update Product: [POST] http://localhost:81/product/:id
+- Get Product: [GET] http://localhost:81/product/:id
+- User Products: [GET] http://localhost:81/product
+- All Products: [GET] http://localhost:81/product/all

@@ -13,7 +13,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"username\": \"{{username}}\",\n    \"password\": \"{{password}}\"\n}",
+					"raw": "{\"username\": \"Marcelo\", \"password\": \"Sanchez\"}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -21,10 +21,11 @@
 					}
 				},
 				"url": {
-					"raw": "localhost/token",
+					"raw": "localhost:81/token",
 					"host": [
 						"localhost"
 					],
+					"port": "81",
 					"path": [
 						"token"
 					]
@@ -66,10 +67,11 @@
 					}
 				},
 				"url": {
-					"raw": "localhost/product/{{productId}}",
+					"raw": "localhost:81/product/{{productId}}",
 					"host": [
 						"localhost"
 					],
+					"port": "81",
 					"path": [
 						"product",
 						"{{productId}}"
@@ -109,10 +111,11 @@
 					}
 				},
 				"url": {
-					"raw": "localhost/product/{{productId}}",
+					"raw": "localhost:81/product/{{productId}}",
 					"host": [
 						"localhost"
 					],
+					"port": "81",
 					"path": [
 						"product",
 						"{{productId}}"
@@ -155,10 +158,11 @@
 					}
 				},
 				"url": {
-					"raw": "localhost/product",
+					"raw": "localhost:81/product",
 					"host": [
 						"localhost"
 					],
+					"port": "81",
 					"path": [
 						"product"
 					]
@@ -200,10 +204,11 @@
 					}
 				},
 				"url": {
-					"raw": "localhost/product/all",
+					"raw": "localhost:81/product/all",
 					"host": [
 						"localhost"
 					],
+					"port": "81",
 					"path": [
 						"product",
 						"all"
